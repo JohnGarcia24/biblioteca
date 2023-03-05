@@ -19,9 +19,9 @@ public class EditorialService {
         return editorialDao.findById(id).orElse(null);
     }
 
-    public Editorial eliminarEditorial(Integer id){
+    public void eliminarEditorial(Integer id){
         editorialDao.deleteById(id);
-        return eliminarEditorial(id);
+
     }
 
 

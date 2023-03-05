@@ -23,8 +23,8 @@ public class InfoAdicionalController {
     }
 
     @DeleteMapping("/borrar")
-    public InfoAdicional borrarInfoAdicional(Integer id){
-        return  infoAdicionalService.eliminarInfoAdicional(id);
+    public void borrarInfoAdicional(Integer id){
+          infoAdicionalService.eliminarInfoAdicional(id);
     }
 
 

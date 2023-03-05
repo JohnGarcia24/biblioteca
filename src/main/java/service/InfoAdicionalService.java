@@ -19,8 +19,8 @@ public class InfoAdicionalService {
         return iInfoAdicionalDao.findById(id).orElse(null);
     }
 
-    public InfoAdicional eliminarInfoAdicional(Integer id){
+    public void eliminarInfoAdicional(Integer id){
         iInfoAdicionalDao.deleteById(id);
-        return eliminarInfoAdicional(id);
+
     }
 }

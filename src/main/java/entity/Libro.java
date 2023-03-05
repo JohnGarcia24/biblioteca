@@ -12,7 +12,7 @@ public class Libro {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "titulo", nullable = false, length = 50)
+    @Column(name = "titulo", length = 50)
     private String titulo;
 
     @Column(name = "descripcion", length = 200)
@@ -21,18 +21,20 @@ public class Libro {
     @Column(name = "favorito")
     private String favorito;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "libroCategoria")
     Categoria categoria;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "libroEditorial")
     Editorial editorial;
 
-    @OneToOne(mappedBy = "libro")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "infoAdicional-id")
     List<InfoAdicional>infoAdicionales;
 
-    @ManyToMany(mappedBy = "libros", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany
+    @JoinTable(name = "libro-autor", joinColumns = @JoinColumn(name = "libro-id"), inverseJoinColumns = @JoinColumn(name = "autor-id"))
     private List<Autor>autores;
 
     public Integer getId() {

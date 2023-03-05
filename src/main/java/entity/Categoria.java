@@ -12,11 +12,12 @@ public class Categoria {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "nombre", nullable = false, length = 45)
+    @Column(name = "nombre", length = 45)
     private String nombre;
 
-    @OneToMany(mappedBy = "categoria")
+    @OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY)
     List<Libro>libros;
+
 
     public Integer getId() {
         return id;

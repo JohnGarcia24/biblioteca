@@ -13,10 +13,10 @@ public class Editorial {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "nombre", nullable = false,length = 45)
+    @Column(name = "nombre",length = 45)
     private String nombre;
 
-    @OneToMany(mappedBy = "editorial")
+    @OneToMany(mappedBy = "editorial", fetch = FetchType.LAZY)
     List<Libro>libros;
 
     public Integer getId() {

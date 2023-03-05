@@ -21,8 +21,8 @@ public class LibroController {
     }
 
     @DeleteMapping("/borrar")
-    public  Libro borrarLibro(Integer id){
-        return libroService.eliminarLibro(id);
+    public  void borrarLibro(Integer id){
+         libroService.eliminarLibro(id);
     }
 
     @GetMapping("/obtener-titulo")

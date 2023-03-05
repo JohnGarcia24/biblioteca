@@ -21,5 +21,5 @@ public class AutorController {
     }
 
     @DeleteMapping("/borrar")
-    public Autor eliminarAutor(Integer id){return autorService.eliminarAutor(id);}
+    public void eliminarAutor(Integer id){ autorService.eliminarAutor(id);}
 }

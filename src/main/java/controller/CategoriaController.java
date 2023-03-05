@@ -22,7 +22,7 @@ public class CategoriaController {
     }
 
     @DeleteMapping("/borrar")
-    public  Categoria borrarCategoria(Integer id){
-        return categoriaService.eliminarCategoria(id);
+    public  void borrarCategoria(Integer id){
+         categoriaService.eliminarCategoria(id);
     }
 }

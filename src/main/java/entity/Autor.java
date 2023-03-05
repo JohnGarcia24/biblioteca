@@ -12,11 +12,9 @@ public class Autor {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "nombre", nullable = false, length = 45)
+    @Column(name = "nombre", length = 45)
     private String nombre;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Libro>libros;
 
     public Integer getId() {
         return id;
@@ -34,11 +32,5 @@ public class Autor {
         this.nombre = nombre;
     }
 
-    public List<Libro> getLibros() {
-        return libros;
-    }
 
-    public void setLibros(List<Libro> libros) {
-        this.libros = libros;
-    }
 }

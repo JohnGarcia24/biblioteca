@@ -19,9 +19,9 @@ public class LibroService {
         return libroDao.findById(id).orElse(null);
     }
 
-    public Libro eliminarLibro(Integer id){
+    public void eliminarLibro(Integer id){
          libroDao.deleteById(id);
-         return eliminarLibro(id);
+
     }
 
     public Libro encontrarLibroTitulo(String titulo){

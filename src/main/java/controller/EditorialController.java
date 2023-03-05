@@ -22,7 +22,7 @@ public class EditorialController {
     }
 
     @DeleteMapping("/borrar")
-    public  Editorial borrarEditorial(Integer id){
-        return editorialService.eliminarEditorial(id);
+    public  void borrarEditorial(Integer id){
+        editorialService.eliminarEditorial(id);
     }
 }

@@ -19,8 +19,8 @@ public class AutorService {
         return autorDao.findById(id).orElse(null);
     }
 
-    public Autor eliminarAutor(Integer id){
+    public void  eliminarAutor(Integer id){
         autorDao.deleteById(id);
-        return eliminarAutor(id);
+
     }
 }

@@ -19,8 +19,8 @@ public class CategoriaService {
         return categoriaDao.findById(id).orElse(null);
     }
 
-    public Categoria eliminarCategoria(Integer id){
+    public void eliminarCategoria(Integer id){
         categoriaDao.deleteById(id);
-        return eliminarCategoria(id);
+
     }
 }

@@ -13,14 +13,12 @@ public class InfoAdicional {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "idioma",nullable = false)
+    @Column(name = "idioma")
     private String idioma;
 
     @Column(name = "fechaPublicacion")
     private Date fechaPublicacion;
 
-    @OneToOne(mappedBy = "infoAdicional")
-    List<Libro>libros;
 
     public Integer getId() {
         return id;
@@ -46,13 +44,6 @@ public class InfoAdicional {
         this.fechaPublicacion = fechaPublicacion;
     }
 
-    public List<Libro> getLibros() {
-        return libros;
-    }
-
-    public void setLibros(List<Libro> libros) {
-        this.libros = libros;
-    }
 
     @PrePersist
     public void prePersist(){
